@@ -6,6 +6,6 @@ self.addEventListener('fetch', function(event) {
   event.respondWith(
     new Response('<p class="a-winner-is-me">Hello World</p>', {
       headers: {'Content-Type': 'text/html'}
-    })
+    });
   );
 });
