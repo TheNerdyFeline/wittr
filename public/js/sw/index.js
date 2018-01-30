@@ -13,11 +13,16 @@ self.addEventListener('install', function(event) {
     // Add cache the urls from urlsToCache
     caches.open('wittr-static-v1').then(function(cache) {
       cache.addAll(urlsToCache);
-    });
+    })
   );
 });
 
 self.addEventListener('fetch', function(event) {
   // Leave this blank for now.
   // We'll get to this in the next task.
+  event.respondWith(
+    caches.match(event.request).then(function(response) {
+      return response || fetch(event.request);
+    })
+  );
 });
