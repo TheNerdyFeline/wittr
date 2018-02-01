@@ -46,8 +46,6 @@ IndexController.prototype._registerServiceWorker = function() {
       reg.addEventListener('updatefound', function() {
         indexController._trackInstalling(reg.intalling);
         return;
-          }
-        });
       });
     }
   });

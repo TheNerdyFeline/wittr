@@ -51,7 +51,7 @@ IndexController.prototype._registerServiceWorker = function() {
   });
 };
 
-IndexController.prototype._trackiInstalling = function(worker) {
+IndexController.prototype._trackInstalling = function(worker) {
   let indexController = this;
 
   worker.addEventListener('statechange', function() {
