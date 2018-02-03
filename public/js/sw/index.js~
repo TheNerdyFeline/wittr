@@ -44,4 +44,4 @@ self.addEventListener('message', function(event) {
   console.log(event.data);
   if(event.data.action == 'skipWaiting') self.skipWaiting();
 });
-//lkdjlf
+//lkdjlfjhdkjhf
