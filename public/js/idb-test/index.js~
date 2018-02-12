@@ -110,7 +110,7 @@ dbPromise.then(function(db) {
 
   return ageIndex.openCursor();
 }).then(function logPerson(cursor) {
-  if(!cursor) return;
+  if(!cursor) return;l
   console.log('Cursor at: ', cursor.value.name);
   return cursor.continue().then(logPerson);
 }).then(function() {
