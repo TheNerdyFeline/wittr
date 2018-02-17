@@ -144,10 +144,10 @@ IndexController.prototype._onSocketMessage = function(data) {
     let wittrStore = tx.objectStore('wittrs');
     messages.forEach(function(message) {
       wittrStore.put(message)
-      // console.log(message);
+      console.log(message);
     })
   }).then(function(data) {
-    console.log('it works');
+    console.log(data);
   }).catch(function(err) {
     console.log(err);
   });
