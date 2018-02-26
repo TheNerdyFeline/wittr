@@ -89,8 +89,9 @@ IndexController.prototype._showCachedMessages = function() {
     return timeIndex.getAll();
   }).then(function(messages) {
     // console.log(posts);
-    indexController._postsView.addPosts(messages.reverse());
   });
+
+  this._postsView.addPosts(messages);
 };
 
 IndexController.prototype._trackInstalling = function(worker) {
