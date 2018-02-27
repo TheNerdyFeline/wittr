@@ -170,7 +170,7 @@ IndexController.prototype._onSocketMessage = function(data) {
     // open a cursor that goes through an index/store
     // backwards.
     store.index('by-date').openCursor(null, 'prev').then(function(cursor) {
-      return cursor.advance(30);
+      return cursor.advance(10);
     }).then(function deletePost(cursor) {
       if(!cursor) return;
       // console.log(cursor.value.time);
