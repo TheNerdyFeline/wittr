@@ -73,7 +73,7 @@ function servePhoto(request) {
   return caches.match(storageUrl).then(function(response) {
     console.log(response);
     if(response) return response;
-    return caches.open(contentImgsCache).then(function(cache) {
+    caches.open(contentImgsCache).then(function(cache) {
       return fetch(request).then(function(response) {
         console.log(response);
         cache.put(storageUrl, response.clone());
