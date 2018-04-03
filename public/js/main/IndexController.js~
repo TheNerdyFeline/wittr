@@ -178,8 +178,8 @@ IndexController.prototype._cleanImageCache = function() {
       return cache.keys().then(function(requests) {
       // console.log(requests);
         requests.forEach(function(request) {
-          let url = new URL(request.url);
-          if(!activeImages.includes(url.pathname)) {
+          let url = new URL(request.url.pathname);
+          if(!activeImages.includes(url)) {
             cache.delete(request)
           }
         });
