@@ -81,7 +81,16 @@ function serveAvatar(request) {
         cache.put(storageUrl, netRes.clone());
         return netRes;
       });
-    return res || netFetch;
+
+      if(res) {
+        return res && netFetch;
+      } else {
+        return fetch(request).then(function(netRes) {
+          cache.put(storageUrl, netRes.clone());
+          return netRes;
+          console.log('test');
+        });
+      }
     });
   });
 }
